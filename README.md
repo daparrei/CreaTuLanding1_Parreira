@@ -9,3 +9,15 @@ Uso de props para enviar un string con un mensaje hacia el componente ItemListCo
 1) Se instalo react-icons/lu para el carrito de compras
 2) Se instalo bootstrap para usar los estilos
 3) Agregar Mostrar productos dinámicamente mediante una API Mock (https://69071d72b1879c890ed8d89d.mockapi.io/productos)
+
+
+PreEntrega 2 - Diego Parreira
+
+1) Corrigo logo del carrito
+
+2) Agrego itemCard y ItemList
+
+3) Genero formato para grilla de producto
+
+4) Agrego imagenes de productos
+
