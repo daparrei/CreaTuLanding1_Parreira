@@ -13,7 +13,7 @@ Uso de props para enviar un string con un mensaje hacia el componente ItemListCo
 
 PreEntrega 2 - Diego Parreira
 
-1) Corrigo logo del carrito
+1) Corrijo logo del carrito
 
 2) Agrego itemCard y ItemList
 
