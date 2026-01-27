@@ -1,23 +1,31 @@
+import { getProducts,getProductsById } from "../data/api-productos.js";
 import { useEffect, useState } from "react";
-import ItemList from "./ItemList";
+import ItemList from "./ItemList";  
 
 const ItemListContainer = ({ greeting }) => {
   const [products, setProducts] = useState([]);
-  const [logging, setLogging] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://69071d72b1879c890ed8d89d.mockapi.io/productos")
-      .then(res => res.json())
-      .then(data => setProducts(data))
-      .catch(err => console.error("Error al cargar productos:", err))
-      .finally(() => setLogging(true));  
-     
+
+    getProducts()
+       .then((response) => {
+        setProducts(response);
+      })
+      .catch((error)=> {
+        console.log(error);
+      })
+      .finally(()=> {
+        setLoading(false)
+       
+      });
+       
   }, []);
 
   return (
     <div className="container mt-4">
       <h2>{greeting}</h2>
-      { logging == true ? <ItemList products={products} /> : <p>Cargando productos...</p>}
+      { loading == true ? <p>Cargando productos...</p> : <ItemList products={products} />}
       </div>
   );
 };
