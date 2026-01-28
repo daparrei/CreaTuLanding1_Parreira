@@ -1,4 +1,5 @@
 import './ItemCard.css';
+import { Link } from "react-router-dom";
 
 const ItemCard = ({ product }) => {
 
@@ -8,9 +9,9 @@ const ItemCard = ({ product }) => {
 
   return (
     <div className="galeria-categoria-zapitilla">
-      <a href="/producto-detalle">
+      <Link to={`/product/${product.id}`}>
         <img src={product.imagen} alt={product.alt} />
-      </a>
+      </Link>
 
       <p className="galeria-categoria-zapitilla-nombre">
         Zapatilla {product.nombre}
@@ -24,13 +25,15 @@ const ItemCard = ({ product }) => {
         {product.descripcion}
       </p>
 
+      <Link to={`/product/${product.id}`}>
       <button
         className="galeria-categoria-zapitilla-boton"
         onClick={handleComprar}
       >
-        COMPRAR
+       COMPRAR
       </button>
-    </div>
+      </Link>
+      </div>      
   );
 };
 
