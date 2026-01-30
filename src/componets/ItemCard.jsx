@@ -10,7 +10,7 @@ const ItemCard = ({ product }) => {
   return (
     <div className="galeria-categoria-zapitilla">
       <Link to={`/product/${product.id}`}>
-        <img src={product.imagen} alt={product.alt} />
+        <img src={`/${product.imagen}`} alt={product.alt} />
       </Link>
 
       <p className="galeria-categoria-zapitilla-nombre">

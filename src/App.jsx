@@ -18,6 +18,7 @@ function App() {
         <Route path='/' element={<ItemListContainer greeting={"Bienvenido a ZAPATILLAS QUILMES"} />} />
         <Route path='/about' element={ <About />} />
         <Route path='/product/:id' element={<ProductDetail />} />
+        <Route path='/categoria/:category' element={<ItemListContainer greeting={"Bienvenido a ZAPATILLAS QUILMES"} />} />
      </Routes>
  </BrowserRouter>
   )

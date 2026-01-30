@@ -1,4 +1,8 @@
 import CartWidget from "./CartWidget";
+import { Link,NavLink } from "react-router-dom";
+import './NavBar.css';
+
+
 
 const NavBar = () => {
   return (
@@ -6,10 +10,10 @@ const NavBar = () => {
       <div className="container-fluid">
 
         {/* Marca */}
-        <a className="navbar-brand" href="#">
+       <Link className="navbar-brand" to="/">
           ZAPATILLAS QUILMES
-        </a>
-
+        </Link>
+        
         {/* Botón mobile */}
         <button
           className="navbar-toggler"
@@ -25,23 +29,23 @@ const NavBar = () => {
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
 
             <li className="nav-item">
-              <a className="nav-link active" href="#">Inicio</a>
+               <NavLink className="nav-link" to="/">Inicio</NavLink>
             </li>
 
             <li className="nav-item">
-              <a className="nav-link" href="#">Nosotros</a>
+              <NavLink className="nav-link" to="/about">Nosotros</NavLink>
+            </li>
+            
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/categoria/Hombre">Hombre</NavLink>
             </li>
 
             <li className="nav-item">
-              <a className="nav-link" href="#">Hombre</a>
+              <NavLink className="nav-link" to="/categoria/Mujer">Mujer</NavLink>
             </li>
 
             <li className="nav-item">
-              <a className="nav-link" href="#">Mujer</a>
-            </li>
-
-            <li className="nav-item">
-              <a className="nav-link" href="#">Niños</a>
+              <NavLink className="nav-link" to="/categoria/Niños">Niños</NavLink>
             </li>
           </ul>
 
