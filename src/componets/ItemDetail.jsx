@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getProductsById } from "../data/api-productos.js";
+import ItemCount from "./ItemCount.jsx";
 
-const ProductDetail = () => {
+
+const ItemDetail = () => {
   const { id } = useParams();
 
   const [product, setProduct] = useState(null);
@@ -23,6 +25,11 @@ const ProductDetail = () => {
       });
   }, [id]);
 
+  const handleAddToCart = (cantidad) => {
+    console.log("Producto:", product);
+    console.log("Cantidad:", cantidad);
+  };
+
   if (loading) return <p>Cargando producto...</p>;
   if (!product) return <p>No existe el producto</p>;
 
@@ -36,11 +43,16 @@ const ProductDetail = () => {
         <img
           src={`/${product.imagen}`}
           alt={product.nombre}
-          style={{ width: "100%" }}
+          style={{ width: "50%" }}
         />
       )}
+      <ItemCount
+        stock={product.stock ?? 10}
+        initial={1}
+        onAdd={handleAddToCart}
+      />
     </div>
   );
 };
 
-export default ProductDetail;
+export default ItemDetail;
